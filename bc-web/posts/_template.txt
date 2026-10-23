@@ -1,0 +1,15 @@
+title: my new post title
+
+Copy this file, rename it like 04-my-new-post.txt, and replace this text.
+(Files starting with _ are skipped, so this template never shows up on the site.)
+
+The part after the number becomes the URL: 04-my-new-post.txt -> /blog/my-new-post
+The number sets the order on the blog page.
+
+How text works:
+- A blank line starts a new paragraph.
+- A single line break stays a line break (good for poems).
+- Wrap words in *stars* for italics.
+- Lines starting with "> " become a quote. A quote line starting with "> ~ " is the attribution.
+
+Then run:  python3 build.py
