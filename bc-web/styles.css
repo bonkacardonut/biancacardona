@@ -73,6 +73,8 @@ p { margin: 0; }
 
 .about-art {
   position: absolute;
+  left: 862.4px;
+  top: 138.3px;
   display: block;
   width: 324.9px;
   height: auto;
@@ -173,7 +175,13 @@ body { position: relative; }
 /* ---------- smaller screens ---------- */
 @media (max-width: 1100px) {
   .hobby-art { left: 0; flex-wrap: wrap; }
-  .about-art { display: none; }
+  .about-art {
+    position: static;
+    width: min(260px, 65vw);
+    margin: 0 auto 40px;
+  }
+  .about { padding-bottom: 48px; }
+  .contact { position: static; padding: 0 43.2px 36px; }
   .about { padding-left: 43.2px; padding-top: 126px; }
 }
 @media (max-width: 800px) {
@@ -195,4 +203,10 @@ body { position: relative; }
   .card-img { position: static; width: 100%; height: auto; aspect-ratio: 345 / 415; max-width: 310.5px; margin: 0 auto; }
   .card-title, .card-text { position: static; width: auto; white-space: normal; }
   .card-title { font-size: 28.8px; }
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 480px) {
+  .nav { font-size: 16px; }
+  .nav-links { gap: 10px; }
 }
