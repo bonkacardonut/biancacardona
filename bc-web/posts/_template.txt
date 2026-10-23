@@ -1,4 +1,5 @@
 title: my new post title
+blurb: a short intro that shows under the title (optional, delete this line if you don't want one)
 
 Copy this file, rename it like 04-my-new-post.txt, and replace this text.
 (Files starting with _ are skipped, so this template never shows up on the site.)

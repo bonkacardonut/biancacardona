@@ -80,11 +80,17 @@ def load_posts():
     for f in sorted(POSTS.glob("*.txt")):
         if f.name.startswith("_"):
             continue
-        first, _, rest = f.read_text(encoding="utf-8").partition("\n")
-        if not first.lower().startswith("title:"):
-            raise SystemExit(f"{f.name}: first line must start with 'title:'")
+        text = f.read_text(encoding="utf-8").replace("\r\n", "\n")
+        header, _, body = text.partition("\n\n")
+        meta = {}
+        for line in header.split("\n"):
+            key, sep, value = line.partition(":")
+            if sep and key.strip().lower() in ("title", "blurb"):
+                meta[key.strip().lower()] = value.strip()
+        if "title" not in meta:
+            raise SystemExit(f"{f.name}: needs a 'title:' line at the top")
         slug = re.sub(r"^\d+[-_ ]*", "", f.stem).strip().lower().replace(" ", "-")
-        posts.append({"title": first[6:].strip(), "slug": slug, "body": rest})
+        posts.append({"title": meta["title"], "blurb": meta.get("blurb", ""), "slug": slug, "body": body})
     return posts
 
 
@@ -106,10 +112,13 @@ def main():
     for p in posts:
         d = BLOG / p["slug"]
         d.mkdir(exist_ok=True)
+        blurb = f'\n      <p class="blurb">{inline(p["blurb"])}</p>' if p["blurb"] else ""
         post_main = f"""  <main class="post">
     <article>
-      <h1>{inline(p["title"])}</h1>
+      <h1>{inline(p["title"])}</h1>{blurb}
+      <div class="post-body">
       {body_to_html(p["body"])}
+      </div>
     </article>
     <a class="back" href="../">&larr; all posts</a>
   </main>"""

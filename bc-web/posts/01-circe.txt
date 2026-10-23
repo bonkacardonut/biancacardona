@@ -1,4 +1,5 @@
 title: circe: herbs, empowerment, and ancient greece
+blurb: Inspired by Madeline Miller’s novel, *Circe*
 
 she quells the herbs that tremble
 beneath her toes trodden in musky soil
