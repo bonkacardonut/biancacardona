@@ -210,3 +210,10 @@ body { position: relative; }
   .nav { font-size: 16px; }
   .nav-links { gap: 10px; }
 }
+
+/* ---------- custom heart cursor ----------
+   Only applies when HEART_CURSOR = true at the top of cursor-trail.js */
+html.heart-cursor, html.heart-cursor body,
+html.heart-cursor :is(a, button, label, summary, [role="button"], select) {
+  cursor: url("assets/heart-cursor.svg") 16 14, auto;
+}

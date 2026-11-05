@@ -70,6 +70,7 @@ def page(title, prefix, main):
     </nav>
   </header>
 {main}
+  <script src="{prefix}cursor-trail.js"></script>
 </body>
 </html>
 """
