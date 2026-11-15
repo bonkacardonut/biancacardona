@@ -1,4 +1,5 @@
 title: to choose or not to choose
+blurb: ...that is the question
 
 choice paralysis: in a sea of opportunities, focusing on one fish feels paralyzing—
 
