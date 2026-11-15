@@ -22,8 +22,10 @@ FONTS = (
 
 
 def inline(text):
-    """Escape HTML, then turn *words* into italics."""
-    return re.sub(r"\*(.+?)\*", r"<em>\1</em>", html.escape(text, quote=False))
+    """Escape HTML, turn *words* into italics, and keep a word glued to its em dash."""
+    text = re.sub(r"\*(.+?)\*", r"<em>\1</em>", html.escape(text, quote=False))
+    # "road—" can otherwise wrap with the dash alone on the next line
+    return re.sub(r"(\S+—)", r'<span class="nowrap">\1</span>', text)
 
 
 def plain(text):

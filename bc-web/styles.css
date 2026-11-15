@@ -217,3 +217,5 @@ html.heart-cursor, html.heart-cursor body,
 html.heart-cursor :is(a, button, label, summary, [role="button"], select) {
   cursor: url("assets/heart-cursor.svg") 16 14, auto;
 }
+
+.nowrap { white-space: nowrap; }
