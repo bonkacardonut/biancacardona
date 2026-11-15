@@ -5,7 +5,7 @@
 const HEART_CURSOR = false;
 
 // Dashed trail on/off. Set to true to show the trail, false to hide it.
-const CURSOR_TRAIL = true;
+const CURSOR_TRAIL = false;
 
 if (HEART_CURSOR) document.documentElement.classList.add("heart-cursor");
 
